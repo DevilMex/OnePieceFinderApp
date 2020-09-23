@@ -8,4 +8,6 @@
     <string name="i_contenuti_offerti_da_questa_applicazione_risultano_proprietari_dei_creatori_dell_anime_di_one_piece_e_i_video_sono_presi_da_una_piattaforma_web">I contenuti offerti da questa applicazione risultano proprietari dei creatori dell\'anime di One Piece e i video sono presi da una piattaforma web.</string>
     <string name="indietro">Indietro</string>
     <string name="avanti">Avanti</string>
+    <string name="add">+</string>
+    <string name="remove">-</string>
 </resources>
