@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">One Piece Finder</string>
+    <string name="one_piece_finder">One Piece Finder</string>
+    <string name="mirror_1">Mirror 1</string>
+    <string name="mirror_2">Mirror 2</string>
+    <string name="guarda">Guarda</string>
+    <string name="per_guardare_un_episodio_di_one_piece_scrivi_nel_campo_sottostante_il_numero_dell_episodio_e_premi_il_pulsante">Per guardare un\'episodio di One Piece, scrivi nel campo sottostante il numero dell\'episodio e premi il pulsante!</string>
+    <string name="i_contenuti_offerti_da_questa_applicazione_risultano_proprietari_dei_creatori_dell_anime_di_one_piece_e_i_video_sono_presi_da_una_piattaforma_web">I contenuti offerti da questa applicazione risultano proprietari dei creatori dell\'anime di One Piece e i video sono presi da una piattaforma web.</string>
+    <string name="indietro">Indietro</string>
+    <string name="avanti">Avanti</string>
+</resources>
