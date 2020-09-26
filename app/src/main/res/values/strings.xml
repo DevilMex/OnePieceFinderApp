@@ -10,4 +10,8 @@
     <string name="avanti">Avanti</string>
     <string name="add">+</string>
     <string name="remove">-</string>
+    <string name="episodio">Episodio</string>
+    <string name="n_episodio">N° Episodio</string>
+    <string name="link_1">Link 1</string>
+    <string name="link_2">Link 2</string>
 </resources>

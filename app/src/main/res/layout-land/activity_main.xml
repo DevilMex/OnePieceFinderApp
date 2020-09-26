@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:background="#ffffff"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/mainPage"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:autofillHints="0">
+        android:id="@+id/mainPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:autofillHints="0"
+        tools:context=".MainActivity">
 
         <Button
             android:id="@+id/btnBack"
             android:layout_width="125sp"
             android:layout_height="40sp"
-            android:background="@drawable/material_button_red"
+            android:background="@android:color/holo_red_dark"
             android:text="@string/remove"
             android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btnForward"
-            app:layout_constraintStart_toStartOf="@+id/episodeNumber"
             app:layout_constraintTop_toBottomOf="@+id/episodeNumber" />
 
         <TextView
@@ -32,7 +31,7 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/one_piece_finder"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,10 +47,11 @@ tools:context=".MainActivity">
             android:layout_height="wrap_content"
             android:text="@string/per_guardare_un_episodio_di_one_piece_scrivi_nel_campo_sottostante_il_numero_dell_episodio_e_premi_il_pulsante"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
@@ -59,26 +59,25 @@ tools:context=".MainActivity">
             android:id="@+id/episodeNumber"
             android:layout_width="250sp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
             android:autofillHints=""
             android:background="#ffffff"
             android:ems="10"
-            android:hint="@string/n_episodio"
-            android:textColorHint="@android:color/black"
             android:inputType="numberSigned"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="598dp" />
+            app:layout_constraintGuide_begin="465dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -87,10 +86,11 @@ tools:context=".MainActivity">
             android:layout_marginTop="4dp"
             android:text="@string/i_contenuti_offerti_da_questa_applicazione_risultano_proprietari_dei_creatori_dell_anime_di_one_piece_e_i_video_sono_presi_da_una_piattaforma_web"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="13sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
@@ -99,13 +99,13 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="669dp" />
+            app:layout_constraintGuide_begin="541dp" />
 
         <Button
             android:id="@+id/mirror1button"
             android:layout_width="214dp"
             android:layout_height="40dp"
-            android:background="@drawable/material_button_red"
+            android:background="#ffffff"
             android:text="@string/guarda"
             android:textColor="#000000"
             android:textSize="18sp"
@@ -119,20 +119,20 @@ tools:context=".MainActivity">
             android:id="@+id/btnForward"
             android:layout_width="125sp"
             android:layout_height="40sp"
-            android:background="@drawable/material_button_blue"
+            android:background="@android:color/holo_blue_dark"
             android:text="@string/add"
             android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="@+id/episodeNumber"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toBottomOf="@+id/episodeNumber" />
 
         <TextView
             android:id="@+id/episodeField"
-            android:layout_width="346dp"
-            android:layout_height="160dp"
-            android:textAlignment="center"
-            android:textColor="#000000"
+            android:layout_width="366dp"
+            android:layout_height="167dp"
+            android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintHorizontal_bias="0.644"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -141,7 +141,7 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="428dp" />
+            app:layout_constraintGuide_begin="291dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -158,44 +158,11 @@ tools:context=".MainActivity">
             app:layout_constraintGuide_begin="125dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline7"
+            android:id="@+id/guideline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="182dp" />
-
-        <Button
-            android:id="@+id/btnLink1"
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/material_button_red"
-            android:textStyle="bold"
-            android:text="@string/link_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-        <Button
-            android:id="@+id/btnLink2"
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/material_button_red"
-            android:text="@string/link_2"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLink1" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="269dp" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="330dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
