@@ -78,7 +78,7 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="598dp" />
+            app:layout_constraintGuide_begin="425dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -99,16 +99,15 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="669dp" />
+            app:layout_constraintGuide_begin="490dp" />
 
         <Button
             android:id="@+id/mirror1button"
-            android:layout_width="214dp"
-            android:layout_height="40dp"
+            android:layout_width="125sp"
+            android:layout_height="wrap_content"
             android:background="@drawable/material_button_red"
             android:text="@string/guarda"
             android:textColor="#000000"
-            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -127,8 +126,8 @@ tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/episodeField"
-            android:layout_width="346dp"
-            android:layout_height="160dp"
+            android:layout_width="336dp"
+            android:layout_height="110dp"
             android:textAlignment="center"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +140,7 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="428dp" />
+            app:layout_constraintGuide_begin="307dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -162,40 +161,38 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="182dp" />
+            app:layout_constraintGuide_begin="170dp" />
 
         <Button
             android:id="@+id/btnLink1"
-            android:layout_width="300sp"
+            android:layout_width="125sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/material_button_red"
-            android:textStyle="bold"
             android:text="@string/link_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/btnBack"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
         <Button
             android:id="@+id/btnLink2"
-            android:layout_width="300sp"
+            android:layout_width="125sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/material_button_red"
             android:text="@string/link_2"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLink1" />
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/btnForward"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="269dp" />
+            app:layout_constraintGuide_begin="234dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

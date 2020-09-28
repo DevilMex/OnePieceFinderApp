@@ -3,6 +3,9 @@ package com.example.onepiecefinder;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -20,30 +23,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Button watchButtonView = findViewById(R.id.mirror1button);
         Button forwardButton = findViewById(R.id.btnForward);
         Button backButton = findViewById(R.id.btnBack);
+        Button btnLink1 = findViewById(R.id.btnLink1);
+        Button btnLink2 = findViewById(R.id.btnLink2);
 
         watchButtonView.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 TextView episodeFieldView = findViewById(R.id.episodeField);
                 EditText episodeNumberView = findViewById(R.id.episodeNumber);
                 CharSequence episodeCharSeq = episodeNumberView.getText();
+                Button link1ButtonView = findViewById(R.id.btnLink1);
+                Button link2ButtonView = findViewById(R.id.btnLink2);
                 if(!episodeCharSeq.toString().equals("")){
                     Episode episode = new Episode(Integer.parseInt(episodeCharSeq.toString()));
-                    if(episode.getNumber() <= 0 && episode.getNumber() > 578) {
+                    if(episode.getNumber() <= 0 || episode.getNumber() > 578) {
+                        link1ButtonView.setVisibility(View.INVISIBLE);
+                        link2ButtonView.setVisibility(View.INVISIBLE);
                         sendNotification("Valore non previsto", "L'episodio " + episode.getNumber() + " risulta inesistente!");
                         episodeFieldView.setText("Valore non previsto! L'episodio " + episode.getNumber() + " risulta inesistente!");
                     } else {
                         Log.i("Valore accettato!", "Creazione dei links...");
+                        link1ButtonView.setVisibility(View.VISIBLE);
+                        link2ButtonView.setVisibility(View.VISIBLE);
                         episodeFieldView.setMovementMethod(LinkMovementMethod.getInstance());
-                        episodeFieldView.setText(Html.fromHtml("" +
-                                "<h1><a href=\"" + episode.getFirstLink() + "\">Link 1</a></h1>" +
-                                "<h1><a href=\"" + episode.getSecondLink() + "\">Link 2</a></h1>"
-                        ));
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(episode.getFirstLink())));
                     }
                 } else {
+                    link1ButtonView.setVisibility(View.INVISIBLE);
+                    link2ButtonView.setVisibility(View.INVISIBLE);
                     sendNotification("Contenuto nullo!", "Non c'è nulla");
                     episodeFieldView.setText("Contenuto nullo! il campo è vuoto!");
                 }
@@ -51,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         backButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 TextView episodeFieldView = findViewById(R.id.episodeNumber);
@@ -64,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         forwardButton.setOnClickListener(new View.OnClickListener(){
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 TextView episodeFieldView = findViewById(R.id.episodeNumber);
@@ -73,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
                     int forwardEpisode = Integer.parseInt(episodeFieldView.getText().toString()) + 1;
                     episodeFieldView.setText("" + forwardEpisode);
                 }
+            }
+        });
+
+        btnLink1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(episode.getFirstLink())));
             }
         });
 
