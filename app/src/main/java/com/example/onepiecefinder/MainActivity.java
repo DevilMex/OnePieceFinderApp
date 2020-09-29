@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private Episode episode = new Episode();
     private NumberPicker numberPicker;
     private NotificationManagerCompat notificationManager;
-    private MediaPlayer mediaPlayer = new MediaPlayer();
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -39,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         createNotificationChannel();
         notificationManager = NotificationManagerCompat.from(this);
-
         numberPicker = findViewById(R.id.numberPicker);
         numberPicker.setMinValue(0);
         numberPicker.setMaxValue(578);
+
 
     }
 
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             Log.i("Valore accettato!", "Creazione dei links...");
             link1ButtonView.setVisibility(View.VISIBLE);
             link2ButtonView.setVisibility(View.VISIBLE);
-//                    mediaPlayer = MediaPlayer.create(this,Uri.parse(episode.getFirstLink()));
         }
     }
 
