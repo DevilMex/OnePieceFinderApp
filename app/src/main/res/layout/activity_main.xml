@@ -2,12 +2,13 @@
 
 
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:background="#ffffff"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/mainPage"
@@ -15,17 +16,6 @@ tools:context=".MainActivity">
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:autofillHints="0">
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="125sp"
-            android:layout_height="40sp"
-            android:background="@drawable/material_button_red"
-            android:text="@string/remove"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnForward"
-            app:layout_constraintStart_toStartOf="@+id/episodeNumber"
-            app:layout_constraintTop_toBottomOf="@+id/episodeNumber" />
 
         <TextView
             android:id="@+id/title"
@@ -55,30 +45,23 @@ tools:context=".MainActivity">
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
-        <EditText
-            android:id="@+id/episodeNumber"
-            android:layout_width="250sp"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:background="#ffffff"
-            android:ems="10"
-            android:hint="@string/n_episodio"
-            android:textColorHint="@android:color/black"
-            android:inputType="numberSigned"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textStyle="bold"
+        <NumberPicker
+            android:id="@+id/numberPicker"
+            android:layout_width="100sp"
+            android:layout_height="150sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.167"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+            app:layout_constraintTop_toTopOf="@+id/guideline7">
+
+        </NumberPicker>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="425dp" />
+            app:layout_constraintGuide_begin="334dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -99,13 +82,14 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="490dp" />
+            app:layout_constraintGuide_begin="411dp" />
 
         <Button
             android:id="@+id/mirror1button"
             android:layout_width="125sp"
             android:layout_height="wrap_content"
             android:background="@drawable/material_button_red"
+            android:onClick="submitWatchButton"
             android:text="@string/guarda"
             android:textColor="#000000"
             android:textStyle="bold"
@@ -113,34 +97,6 @@ tools:context=".MainActivity">
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-        <Button
-            android:id="@+id/btnForward"
-            android:layout_width="125sp"
-            android:layout_height="40sp"
-            android:background="@drawable/material_button_blue"
-            android:text="@string/add"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="@+id/episodeNumber"
-            app:layout_constraintTop_toBottomOf="@+id/episodeNumber" />
-
-        <TextView
-            android:id="@+id/episodeField"
-            android:layout_width="336dp"
-            android:layout_height="110dp"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="307dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -167,32 +123,35 @@ tools:context=".MainActivity">
             android:id="@+id/btnLink1"
             android:layout_width="125sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:background="@drawable/material_button_red"
+            android:onClick="browseLinkOne"
             android:text="@string/link_1"
             android:textStyle="bold"
             android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="@+id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numberPicker"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
         <Button
             android:id="@+id/btnLink2"
             android:layout_width="125sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/material_button_red"
+            android:onClick="browseLinkTwo"
             android:text="@string/link_2"
             android:textStyle="bold"
             android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="@+id/btnForward"
-            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numberPicker"
+            app:layout_constraintTop_toBottomOf="@+id/btnLink1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="234dp" />
+            app:layout_constraintGuide_begin="186dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

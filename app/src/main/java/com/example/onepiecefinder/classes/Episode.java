@@ -46,4 +46,8 @@ public class Episode {
         this.number = number;
     }
 
+    public void load(){
+        new Episode(number);
+    }
+
 }
