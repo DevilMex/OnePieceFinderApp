@@ -5,23 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -31,35 +24,30 @@ public class MainActivity extends AppCompatActivity {
 
     private Episode episode = new Episode();
     private NumberPicker numberPicker;
-    private NotificationManagerCompat notificationManager;
+    private TextView episode_text;
+//    private NotificationManagerCompat notificationManager;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createNotificationChannel();
-        notificationManager = NotificationManagerCompat.from(this);
+        episode_text = findViewById(R.id.choiceText);
+//        createNotificationChannel();
+//        notificationManager = NotificationManagerCompat.from(this);
         numberPicker = findViewById(R.id.numberPicker);
-        numberPicker.setMinValue(0);
+        numberPicker.setMinValue(1);
         numberPicker.setMaxValue(578);
-
-
     }
 
     public void submitWatchButton(View view){
         Button link1ButtonView = findViewById(R.id.btnLink1);
         Button link2ButtonView = findViewById(R.id.btnLink2);
         episode = new Episode(numberPicker.getValue());
-        if(episode.getNumber() <= 0 || episode.getNumber() > 578) {
-            link1ButtonView.setVisibility(View.INVISIBLE);
-            link2ButtonView.setVisibility(View.INVISIBLE);
-            sendNotification("Valore non previsto", "L'episodio " + episode.getNumber() + " risulta inesistente!");
-        } else {
-            Log.i("Valore accettato!", "Creazione dei links...");
-            link1ButtonView.setVisibility(View.VISIBLE);
-            link2ButtonView.setVisibility(View.VISIBLE);
-        }
+        link1ButtonView.setVisibility(View.VISIBLE);
+        link2ButtonView.setVisibility(View.VISIBLE);
+        link1ButtonView.setText("Link 1: Episodio " + numberPicker.getValue());
+        link2ButtonView.setText("Link 2: Episodio " + numberPicker.getValue());
+        episode_text.setText("Episodio scelto: " + numberPicker.getValue());
     }
 
     public void browseLinkOne(View view){
@@ -69,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     public void browseLinkTwo(View view){
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(episode.getSecondLink())));
     }
+
+    /*
 
     void sendNotification(String title, String msg){
         Log.w("Input Error","Errore nell'input. Creazione notifica...");
@@ -94,5 +84,8 @@ public class MainActivity extends AppCompatActivity {
             manager.createNotificationChannel(channel);
         }
     }
+
+
+     */
 
 }

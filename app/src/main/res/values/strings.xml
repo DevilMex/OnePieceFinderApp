@@ -14,4 +14,7 @@
     <string name="n_episodio">N° Episodio</string>
     <string name="link_1">Link 1</string>
     <string name="link_2">Link 2</string>
+    <string name="i_contenuti_offerti_da_questa_applicazione_sono_di_propriet_dei_creatori_dell_anime_one_piece_i_video_sono_ricavati_dal_sit_ufficiale_di_animehditalia">I contenuti offerti da questa applicazione sono di proprietà dei creatori dell\'anime One Piece. I video sono ricavati dal sit ufficiale di AnimeHDItalia.</string>
+    <string name="per_guardare_un_episodio_di_one_piece_scegli_il_numero_dell_episodio_e_clicca_il_tasto_guarda_fatto_ci_scegli_se_avviare_il_link_n_1_o_il_link_n_2_buona_visione">Per guardare un episodio di One Piece scegli il numero dell\'episodio e clicca il tasto Guarda. Fatto ciò scegli se avviare il link n°1 o il link n°2. Buona visione!</string>
+    <string name="episodio_scelto_nessuno">Episodio scelto: Nessuno</string>
 </resources>

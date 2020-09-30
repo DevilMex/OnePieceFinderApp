@@ -36,7 +36,7 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/per_guardare_un_episodio_di_one_piece_scrivi_nel_campo_sottostante_il_numero_dell_episodio_e_premi_il_pulsante"
+            android:text="@string/per_guardare_un_episodio_di_one_piece_scegli_il_numero_dell_episodio_e_clicca_il_tasto_guarda_fatto_ci_scegli_se_avviare_il_link_n_1_o_il_link_n_2_buona_visione"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="14sp"
@@ -47,10 +47,9 @@
 
         <NumberPicker
             android:id="@+id/numberPicker"
-            android:layout_width="100sp"
+            android:layout_width="250sp"
             android:layout_height="150sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.167"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline7">
 
@@ -61,14 +60,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="305dp" />
+            app:layout_constraintGuide_begin="526dp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/i_contenuti_offerti_da_questa_applicazione_risultano_proprietari_dei_creatori_dell_anime_di_one_piece_e_i_video_sono_presi_da_una_piattaforma_web"
+            android:text="@string/i_contenuti_offerti_da_questa_applicazione_sono_di_propriet_dei_creatori_dell_anime_one_piece_i_video_sono_ricavati_dal_sit_ufficiale_di_animehditalia"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="13sp"
@@ -82,38 +81,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="368dp" />
+            app:layout_constraintGuide_begin="604dp" />
 
         <Button
             android:id="@+id/mirror1button"
-            android:layout_width="125sp"
+            android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:background="@drawable/material_button_red"
             android:onClick="submitWatchButton"
             android:text="@string/guarda"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-        <SurfaceView
-            android:id="@+id/videoSpace"
-            android:layout_width="300sp"
-            android:layout_height="100sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3">
-
-        </SurfaceView>
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="33dp" />
+            app:layout_constraintGuide_begin="25dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
@@ -127,33 +116,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="146dp" />
+            app:layout_constraintGuide_begin="355dp" />
 
         <Button
             android:id="@+id/btnLink1"
-            android:layout_width="125sp"
+            android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:background="@drawable/material_button_red"
             android:onClick="browseLinkOne"
             android:text="@string/link_1"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/numberPicker"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
         <Button
             android:id="@+id/btnLink2"
-            android:layout_width="125sp"
+            android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/material_button_red"
             android:onClick="browseLinkTwo"
             android:text="@string/link_2"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/numberPicker"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnLink1" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -161,14 +152,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="159dp" />
+            app:layout_constraintGuide_begin="219dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
+        <TextView
+            android:id="@+id/choiceText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="447dp" />
+            android:text="@string/episodio_scelto_nessuno"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnLink1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
